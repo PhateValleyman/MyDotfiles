@@ -1,0 +1,21 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/data/data/com.termux/files/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/data/data/com.termux/files/usr/bin/gh auth git-credential
+[user]
+	email = Jonas.Ned@outlook.com
+	name = Phate Valleyman
+[safe]
+	directory = /storage/emulated/0/Git
+	directory = /storage/emulated/0/Git/ccat
+	directory = /storage/emulated/0/Git
+	directory = /storage/emulated/0/Git/ccat_default
+	directory = /storage/emulated/0/Git/myTermux
+[pull]
+	rebase = false
+[alias]
+	nuke = "!sh -c \"git checkout $1 && git stash -u && git fetch --all && git reset --hard origin/$1  && git clean -df && git submodule update --init --recursive\" -"
+	ver = "!sh -c \"git describe --tags --abbrev=0\" -"
+	com = "!sh -c \"git rev-parse HEAD\" -"

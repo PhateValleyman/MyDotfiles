@@ -1,0 +1,13 @@
+{
+  "Name": "MyDotfiles",
+  "Description": "No description specified",
+  "InstallPath": "",
+  "Git": true,
+  "Repository": {
+    "RemoteName": "origin",
+    "RemoteUrl": "https://github.com/PhateValleyman/MyDotfiles",
+    "Branch": "master"
+  },
+  "Dotfiles": [],
+  "Installers": []
+}

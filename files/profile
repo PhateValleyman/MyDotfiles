@@ -1,0 +1,100 @@
+for i in /data/data/com.termux/files/usr/etc/profile.d/*.sh; do
+	if [ -r $i ]; then
+		. $i
+	fi
+done
+unset i
+
+export HOSTNAME=SM-G928F
+export OPENAI_API_KEY=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
+export OPENAI_KEY=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
+
+export GIT_DISCOVERY_ACROSS_FILESYSTEM=true
+
+export BASH_COMPLETION_CMD_CONFIGURE_HINTS=true
+
+# Source etc/bash.bashrc and ~/.bashrc also for interactive bash login shells:
+if [ "$BASH" ]; then
+        if [[ "$-" == *"i"* ]]; then
+                if [ -r /data/data/com.termux/files/usr/etc/bash.bashrc ]; then
+                        . /data/data/com.termux/files/usr/etc/bash.bashrc
+                fi
+                if [ -r /data/data/com.termux/files/home/.bashrc ]; then
+                        . /data/data/com.termux/files/home/.bashrc
+                fi
+        fi
+fi
+
+#export LESS_TERMCAP_mb=$'\e[1;32m'
+#export LESS_TERMCAP_md=$'\e[1;32m'
+#export LESS_TERMCAP_me=$'\e[0m'
+#export LESS_TERMCAP_se=$'\e[0m'
+#export LESS_TERMCAP_so=$'\e[01;33m'
+#export LESS_TERMCAP_ue=$'\e[0m'
+#export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+export MANDIR=/data/data/com.termux/files/usr/share/man
+export MANPATH=/data/data/com.termux/files/usr/share/man
+export TERMUX_PREFIX=/data/data/com.termux/files/usr
+
+export PATH=$PATH:/data/data/com.termux/files/usr/sbin:/data/data/com.termux/files/home/go/bin
+
+source ~/.local/share/icons-in-terminal/icons_bash.sh
+
+alias lst='ls -1ac --color=tty'
+alias ls='ls -1a --color=tty --group-directories-first'
+
+alias ..='cd ..'
+alias ...='.. && ..'
+alias ....='... && ..'
+alias .....='.... && ..'
+alias ......='..... && ..'
+
+alias cp='cp -v -r'
+alias mv='mv -v -f'
+alias rm='yes | rm -r -i'
+
+alias wget='wget --continue'
+
+alias setup='nano /data/data/com.termux/files/usr/etc/profile'
+alias reload='source /data/data/com.termux/files/usr/etc/profile'
+
+eval "$(register-python-argcomplete pipx)"
+eval "$(register-python-argcomplete pip)"
+eval "$(register-python-argcomplete sgpt)"
+#eval "$(register-python-argcomplete pyinstaller)"
+
+alias gpt=/data/data/com.termux/files/home/.local/bin/sgpt
+alias git-nuke="git checkout $1 && git stash -u && git fetch --all && git reset --hard origin/$1  && git clean -df && git submodule update --init --recursive"
+
+#/data/data/com.termux/files/usr/sbin/umbrella
+
+export PS1='\[\e[39m\]\[\e[39m\]\[\e[0;92m\]SM-G928F\[\e[0;1;91m\]$\[\e[0;38;5;190m\]\w\[\e[0;1;96m\]:\[\e[0m\]\[\e[0m\]\[\e[39m\]\[\e[0m\]\[\e[39m\]'
+
+alias bundletool="java -jar /data/data/com.termux/files/home/.local/bin/bundletool.jar"
+alias ManifestEditor="java -jar /data/data/com.termux/files/home/.local/bin/ManifestEditor.jar"
+
+export OPENAI_API_KEY="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"
+
+#source ~/.cargo/env
+
+command_not_found_handle() {
+  echo -e "Command not found:\n'\e[1m\e[91m$1\e[0m'\n"
+}
+
+
+export SHELL_COMPLETIONS_DIR=/data/data/com.termux/files/usr/etc/bash_completion.d
+
+# Define colors
+txtrst='\e[0m'    # Text Reset
+txtred='\e[0;31m' # Red
+txtgrn='\e[0;32m' # Green
+txtylw='\e[0;33m' # Yellow
+txtblu='\e[0;34m' # Blue
+txtpur='\e[0;35m' # Purple
+txtcyn='\e[0;36m' # Cyan
+txtwht='\e[0;37m' # White
+
+# Set PS4 to colorize the debugging output
+export PS4='${R}+++${N}${B}${LINENO}${N}${R}+++${N}: '
+

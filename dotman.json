@@ -8,6 +8,23 @@
     "RemoteUrl": "https://github.com/PhateValleyman/MyDotfiles",
     "Branch": "master"
   },
-  "Dotfiles": [],
+  "Dotfiles": [
+    {
+      "Name": "gitconfig",
+      "Description": "My gitconfig file",
+      "Location": "/data/data/com.termux/files/home/.gitconfig",
+      "Type": "file",
+      "Priority": 1,
+      "LastUpdate": "11:28:54 PM 2023-10-23"
+    },
+    {
+      "Name": "profile",
+      "Description": "Default Termux bash profile file",
+      "Location": "/data/data/com.termux/files/usr/etc/profile",
+      "Type": "file",
+      "Priority": 1,
+      "LastUpdate": "11:57:3 PM 2023-10-23"
+    }
+  ],
   "Installers": []
 }
